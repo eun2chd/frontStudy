@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>프로토타입-2</title>
+</head>
+<body>
+    <!-- 
+      프로토타입(prototype)
+      자바스크립트의 모든 객체는 프로토타입이라는 객체를 포함하고 있습니다. 
+      모든 객체는 프로토타입으로 부터 프로퍼티와 메소드를 상속받습니다. 
+      이처럼 자바스크립트의 모든 객체는 최소한 하나 이상의 다른 객체로부터 
+      상속을 받으며 상속되는 정보를 제공하는 객체를 프로토타입이라고 합니다.
+
+     function Dog(){//프로토타입
+         ....
+     }
+
+     const Rucy = new Dog(); // Dog.prototype ->생성자
+     * 자바스크립트에 내장된 모든 생성자나 사용자 정의 생성자는 
+       Object.prototype과 자신의 생성자 객체를 프로토타입으로 가집니다.
+    
+       Rucy  <----------------- Dog.prototype
+             <----------------- Object.prototype
+
+      클래스 기반 언어: java, python, ruby, C++
+      프로토타입 기반 언어 : Javascript
+     -->
+
+     <script>
+      'use strict';
+       
+       function Dog(name, age, color){// 프로토타입(저장공간)
+            this.name = name;
+            this.age = age;
+            this.color = color;
+       }
+       
+       Dog.prototype.family = "포메리안";
+       Dog.prototype.run = function(){
+           return `${this.name}가 달립니다`
+       }
+
+       const Rucy = new Dog("루시", 10, "흰색");
+       const PPomi = new Dog("뽀미", 5, "흰색");
+
+        console.log(`이름 : ${Rucy.name}`);
+        console.log(`나이 : ${Rucy.age}`);
+        console.log(`색상 : ${Rucy.color}`);
+        console.log(`종 : ${Rucy.family}`);
+        console.log(Rucy.run());
+
+        console.log('----------------------------------')
+
+        console.log(`이름 : ${PPomi.name}`);
+        console.log(`나이 : ${PPomi.age}`);
+        console.log(`색상 : ${PPomi.color}`);
+        PPomi.family = "폼피츠";//수정
+        console.log(`종 : ${PPomi.family}`);
+        console.log(PPomi.run());
+        
+       
+     </script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            list-style: none;
+        }
+
+        #menu {
+            width: 500px;
+            height: 25px;
+            border: 1px solid #ccc;
+        }
+
+        #menu>ul {}
+
+        #menu>ul>li {
+            width: 100px;
+            text-align: center;
+            line-height: 25px;
+            float: left;
+        }
+
+        #menu ul.sub {
+            width: 100px;
+            border: 1px solid #ccc;
+        }
+
+        #menu ul.sub>li {
+            border: 1px solid #ccc;
+        }
+    </style>
+
+    <script src="js/jquery.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $(".sub").hide();
+            $("#menu > ul > li").hover(
+                function () {
+                    $(this).find(".sub").stop().css({ opacity: "1" }).animate({ opacity: "1" }, 1000);
+                },
+                function () {
+                    $(this).find(".sub").stop().css({ opacity: "1" }).animate({ opacity: "0" }, 1000);
+
+                }
+            );
+
+        });
+    </script>
+
+
+</head>
+
+<body>
+
+    <nav id="menu">
+        <ul>
+            <li>menu
+                <ul class="sub">
+                    <li>s_mn</li>
+                    <li>s_mn</li>
+                    <li>s_mn</li>
+                    <li>s_mn</li>
+                </ul>
+            </li>
+            <li>menu
+                <ul class="sub">
+                    <li>s_mn</li>
+                    <li>s_mn</li>
+                    <li>s_mn</li>
+                    <li>s_mn</li>
+                </ul>
+            </li>
+            <li>menu
+                <ul class="sub">
+                    <li>s_mn</li>
+                    <li>s_mn</li>
+                    <li>s_mn</li>
+                    <li>s_mn</li>
+                </ul>
+            </li>
+            <li>menu
+                <ul class="sub">
+                    <li>s_mn</li>
+                    <li>s_mn</li>
+                    <li>s_mn</li>
+                    <li>s_mn</li>
+                </ul>
+            </li>
+            <li>menu
+                <ul class="sub">
+                    <li>s_mn</li>
+                    <li>s_mn</li>
+                    <li>s_mn</li>
+                    <li>s_mn</li>
+                </ul>
+            </li>
+
+        </ul>
+
+
+    </nav>
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+</head>
+
+<body>
+
+    <div class="container">
+        <ul id="tutorial">
+            <li class="html">HTML</li>
+            <li class="css">css</li>
+            <li class="css3">css3</li>
+            <li class="javascript">javascript</li>
+            <li class="jquery">jquery</li>
+            <li class="blank">blank</li>
+        </ul>
+
+        <p id="protfolio">protfolio</p>
+
+
+
+
+    </div>
+
+
+
+    <script>
+        'use strict'
+        // addEventListener(), attachement()
+        // 대상.addEventListener("이벤트", function()) {실행문});
+
+        // var lList = document.querySelectorAll('#tutorial li');
+        // for (var i = 0; i < lList.length; i++) {
+        //     lList[i].addEventListener("click", function (e) {
+
+        //         // jquery 의 this 와 같다.
+
+        //         var ul = e.target.parentNode // 현재 내가 클릭한 노드의 부모 노드를 찾는다.
+        //         ul.style.backgroundColor = "#666";
+
+        //     });
+
+        // }
+
+        var lList = document.querySelectorAll('#tutorial li');
+        for (var i = 0; i < lList.length; i++) {
+            lList[i].addEventListener("click", function (e) {
+
+                // jquery 의 this 와 같다.
+
+                var ul = e.target.parentElement
+                ul.style.backgroundColor = "#666";
+
+            });
+
+        }
+
+
+
+    </script>
+</body>
+
+</html>

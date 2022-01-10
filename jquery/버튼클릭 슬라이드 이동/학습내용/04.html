@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가로값 높이값 가져오기</title>
+    <script src="jquery.js"></script>
+
+    <script>
+        $(document).ready(function () {
+
+            var box = $("#wrapper");
+            $(window).resize(function () {
+                $("#width").text(box.width());  // 가로값가져오기
+                $("#height").text(box.height());  // 높이값 가져오기
+                $("#innerWidth").text(box.innerWidth()); // padding 값 과 합친 가로값
+                $("#innerHeight").text(box.innerHeight());
+
+
+
+            });
+
+
+
+        });
+
+
+
+    </script>
+
+
+
+</head>
+
+<body>
+
+</body>
+
+<span>브아우저 창의 크기를 변경해 보고 박스의 크기가 각 메서드에 따라 어떻게 다른지 확인해 보세요</span>
+
+<div id="wrapper" style=" border : 5px solid blue; padding: 20px; margin: 20px; font-size: 20px;">
+    <span>박스의 width = </span><span id="width">0</span><br>
+    <span>박스의 height = </span><span id="height">0</span><br>
+    <span>박스의 innerWidth = </span><span id="innerWidth">0</span><br>
+    <span>박스의 innerHeight = </span><span id="innerHeight">0</span><br>
+</div>
+
+
+</html>

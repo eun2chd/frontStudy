@@ -1,0 +1,92 @@
+﻿<!DOCTYPE HTML>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>kwicks 네비게이션</title>
+	<style>
+		body {
+			padding: 50px;
+			font-family: "맑은 고딕";
+			font-size: 0.9em;
+
+		}
+
+		.nav {
+
+			height: 300px;
+		}
+
+		ul.nav {
+			position: relative;
+			margin: 0;
+			padding: 0;
+		}
+
+		.nav>li {
+			width: 200px;
+			height: 300px;
+
+			overflow: hidden;
+		}
+
+		.nav>li:nth-child(1) {
+			background-color: brown;
+		}
+
+		.nav>li:nth-child(2) {
+			background-color: rgb(105, 40, 131);
+		}
+
+		.nav>li:nth-child(3) {
+			background-color: rgb(58, 131, 64);
+		}
+
+		.nav>li:nth-child(4) {
+			background-color: rgb(88, 35, 57);
+		}
+
+		.nav>li:nth-child(5) {
+			background-color: rgb(46, 158, 80);
+		}
+
+		ul,
+		li {
+			list-style: none;
+		}
+	</style>
+	<script src="js/jquery-1.8.3.js"></script>
+	<script src="js/jquery.easing.1.3.js"></script>
+	<script src="js/jquery.kwicks-1.5.1.pack.js"></script>
+	<script>
+		$(function () {
+			$("ul.nav").kwicks({
+				max: 800,
+				spaceing: 5,
+				isHorizontal: true, // isVertical : true 방향
+				behavior: "menu",
+				easing: "easeOutBounce"
+
+			});
+		});
+
+	</script>
+</head>
+
+<body>
+
+	<ul class="nav">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+
+
+	</ul>
+
+
+
+</body>
+
+</html>

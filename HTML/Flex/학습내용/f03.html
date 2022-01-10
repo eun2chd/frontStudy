@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>flex - flex -warp</title>
+
+    <style>
+        .wrapper {
+            width: 500px;
+            height: 200px;
+            margin: 0 auto;
+            border: 3px solid red;
+            display: flex;
+        }
+
+        .wrapper>div {
+            width: 100px;
+            border: 1px solid #000;
+            background-color: aquamarine;
+        }
+
+        #container1 {
+            align-items: stretch;
+        }
+
+        #container2 {
+            align-items: flex-start;
+        }
+
+        #container3 {
+            align-items: flex-end;
+        }
+
+        #container4 {
+            align-items: center;
+        }
+
+        #container5 {
+            align-items: baseline;
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+    <h2>align-items : stretch(기본값)</h2>
+    <div id="container1" class="wrapper">
+        <div id="box1">
+            <h2>1</h2>
+        </div>
+        <div id="box2">
+            <h2>2</h2>
+        </div>
+        <div id="box3">
+            <h2>3</h2>
+        </div>
+
+    </div>
+
+
+    <h2>align-items : flex-start</h2>
+    <div id="container2" class="wrapper">
+        <div id="box1">
+            <h2>1</h2>
+        </div>
+        <div id="box2">
+            <h2>2</h2>
+        </div>
+        <div id="box3">
+            <h2>3</h2>
+        </div>
+
+    </div>
+
+    <h2>align-items : flex-end</h2>
+    <div id="container3" class="wrapper">
+        <div id="box1">
+            <h2>1</h2>
+        </div>
+        <div id="box2">
+            <h2>2</h2>
+        </div>
+        <div id="box3">
+            <h2>3</h2>
+        </div>
+
+    </div>
+
+
+    <h2>align-items : center</h2>
+    <div id="container4" class="wrapper">
+        <div id="box1">
+            <h2>1</h2>
+        </div>
+        <div id="box2">
+            <h2>2</h2>
+        </div>
+        <div id="box3">
+            <h2>3</h2>
+        </div>
+
+    </div>
+
+    <h2>align-items : baseline</h2>
+    <div id="container5" class="wrapper">
+        <div id="box1">
+            <h2 style="font-size: 15px;">1</h2>
+        </div>
+        <div id="box2">
+            <h2 style="font-size: 30px;">2</h2>
+        </div>
+        <div id="box3">
+            <h2 style="font-size: 20px;">3</h2>
+        </div>
+
+    </div>
+</body>
+
+</html>

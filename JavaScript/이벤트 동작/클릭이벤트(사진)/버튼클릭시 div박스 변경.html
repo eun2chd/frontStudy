@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #f1f1f1;
+            color: #555;
+        }
+
+        .container {
+            margin-top: 40px;
+            min-width: 440px;
+        }
+
+        nav ul {
+            margin: 16px 0 16px;
+            padding: 8px 0;
+            text-align: left;
+            font-weight: 400;
+            border-bottom: 1px solid #d4d4d4;
+
+        }
+
+        nav ul li {
+            display: inline;
+
+        }
+
+        nav ul li a {
+            margin-right: 0;
+            padding: 10px 20px 10px;
+            text-decoration: none;
+            font-size: 0.87rem;
+            background-color: #f1f1f1;
+            color: #333;
+            border: 1px solid #d4d4d4;
+            border-bottom: none;
+            transition: all 0.4s;
+        }
+
+        nav ul li.on a {
+            background-color: #8ac007;
+            color: #fff;
+            border-color: #8ac007;
+        }
+
+        /* 탭에 의한 박스의 보이기 여부를 설정 */
+        .dsc {
+            display: none;
+            margin: 30px 0;
+            padding: 30px 0;
+            font-size: 0.875em;
+            color: #333;
+            border-bottom: 4px solid #d4d4d4;
+        }
+
+        .dsc.active {
+            display: block;
+        }
+    </style>
+
+
+    <script>
+        window.addEventListener('load', function () {
+            var n = 0; // navLi[n] 와 infoArray 의 초기 인덱스 값
+            var container = document.getElementsByClassName("container")[0];
+            var infoArray = []; // div 
+
+            for (var i = 0; i < container.children.length; i++) {  // nav 와 div를 구분하여 div는 여러개이므로 배열을 활용하여 묶어서 객체화
+                if (container.children[i].tagName == "NAV") {
+                    var nav = container.children[i]; // nav 태그를 변수 nav 에 대입
+                } else {
+                    infoArray.push(container.children[i]);
+                }
+            }
+            // nav태그내에 있는 버튼을 탭버튼으로 활용
+            var navLi = nav.children[0].children; // nav ul li 를 의미
+            console.log(navLi);
+
+            // 기본 클랙스 적용
+            navLi[n].classList.add("on");
+            infoArray[n].classList.add("active");
+
+
+
+            for (var i = 0; i < navLi.length; i++) {
+                navLi[i].index = i;
+
+                navLi[i].addEventListener('click', function (e) {
+                    e.preventDefault();
+                    n = e.currentTarget.index; // 현재 클릭한 대상의 인덱스
+
+                    for (var j = 0; j < navLi.length; j++) {
+                        if (j == n) {
+                            navLi[j].classList.add("on");
+                            infoArray[j].classList.add("active");
+                        } else {
+                            navLi[j].classList.remove("on");
+                            infoArray[j].classList.remove("active");
+                        }
+                    }
+
+                });
+            }
+
+
+
+        });
+
+
+    </script>
+
+
+
+</head>
+
+<body>
+
+    <div class="container">
+        <!-- 상단메뉴 탭메뉴 -->
+        <nav>
+            <ul>
+                <li class="tab1"><a href="#">HTML</a></li>
+                <li class="tab2"><a href="#">CSS</a></li>
+                <li class="tab3"><a href="#">JS</a></li>
+                <li class="tab4"><a href="#">JQUERY</a></li>
+            </ul>
+        </nav>
+
+        <div class="dsc html">HTML</div>
+        <div class="dsc css">CSS</div>
+        <div class="dsc js">JS</div>
+        <div class="dsc jquery">JQUERY</div>
+
+    </div>
+
+
+</body>
+
+</html>

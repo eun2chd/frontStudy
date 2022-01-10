@@ -1,0 +1,117 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+<script src="js/jquery-1.7.2.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+
+
+
+<script>
+(function($){
+        $.aniPage=function(e,type){
+            if(e.originalEvent.wheelDelta > 0 || e.originalEvent.detail < 0){
+                $("body, html").animate({
+                    scrollTop:$(window).scrollTop()-$(window).height()
+                },1000,function(){
+                        $.aniOk = 0;
+                });
+            }else{
+                $("body, html").animate({
+                    scrollTop:$(window).scrollTop()+$(window).height()
+                },1000,function(){
+                        $.aniOk = 0;
+                });
+            }
+        };
+    })(jQuery);
+    $(function(){
+        $(".w_box").height($(window).height());
+        $.aniOk=0;
+        $(window).scrollTop(0);
+    });
+    $(document).on("mousewheel DOMMouseScroll",function(e){
+        e.preventDefault();
+        if($.aniOk == 0){
+            $.aniPage(e,e.type);
+            $.aniOk = 1;
+        }
+    });
+</script>
+
+
+
+
+
+
+<style>
+*{
+	padding:0; margin:0;	
+}
+ul,li{
+	list-style:none;	
+}
+a{
+	text-decoration:none;
+	color:#000;	
+}
+
+
+header {
+	position:fixed;
+	width:100%;
+	height:100px;
+	background:#ccc;	
+}
+nav ul{
+		
+}
+nav li{
+	float:left;
+	width:20%;
+}
+
+
+.w_box{
+	margin:0 auto;
+	width:80%;
+	height:900px;
+}
+#box1{	
+	background:#f00;
+}
+#box2{	
+	background:#0f0;
+}
+#box3{	
+	background:#ff0;
+}
+#box4{	
+	background:#f0f;
+}
+</style>
+
+
+</head>
+
+<body>
+<div id="all">
+	<header>
+    	<nav>
+        	<ul id="menu">
+            	<li><a href="#box1">box1</a></li>
+                <li><a href="#box2">box2</a></li>
+                <li><a href="#box3">box3</a></li>
+                <li><a href="#box4">box4</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="box1" class="w_box"></section>
+    <section id="box2" class="w_box"></section>
+    <section id="box3" class="w_box"></section>
+    <section id="box4" class="w_box"></section>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스크롤 위치</title>
+    <script src="jquery.js"></script>
+    <script src="jquery-ui.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            // 화면에 대한 이벤트
+            // reday()  화면을 다 읽어드리고 실행
+            // load() 특정 태그가 다 읽어지면 실행
+            // resize() 화면의 크기가 바뀔때마다 실행
+            // scroll() 화면의 스크롤 움직일때마다 실행
+            $(window).on('scroll', function () {
+                var scl = $(window).scrollLeft();
+                var sct = $(window).scrollTop();
+
+                $("#wrap").children().find(".scrollLeft").text(scl);
+                $("#wrap").children().find(".scrollTop").text(sct);
+
+
+            });
+
+        });
+
+    </script>
+
+
+
+</head>
+
+<body style="height: 3000px; width: 2000px;">
+
+
+
+    <div id="wrap" style="position: fixed; top : 0; left : 0">
+        <p>scrollLeft = <span class="scrollLeft">0</span> </p>
+        <p>scrollTop = <span class="scrollTop">0</span> </p>
+
+
+
+
+    </div>
+</body>
+
+</html>

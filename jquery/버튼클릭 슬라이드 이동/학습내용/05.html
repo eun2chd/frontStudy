@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>box 드래그</title>
+    <script src="jquery.js"></script>
+    <script src="jquery-ui.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $("#box").draggable({
+
+                drag: function () {
+                    $("#position_info").find('.ol').text($("#box").offset().left);
+                    $("#position_info").find('.ot').text($("#box").offset().top);
+                    $("#position_info").find('.pl').text($("#box").position().left);
+                    $("#position_info").find('.pt').text($("#box").position().top);
+
+                }
+
+
+            });
+
+        });
+
+
+
+    </script>
+
+
+
+</head>
+
+<body>
+
+</body>
+<div id="position_info">
+    <span>offset().left = </span><span class="ol">0</span><br>
+    <span>offset().top = </span><span class="ot">0</span><br>
+    <span>offset().left = </span><span class="pl">0</span><br>
+    <span>offset().top = </span><span class="pt">0</span><br>
+    <span>box를 드래그 해보세요</span>
+
+</div>
+
+<div id="wrapper" style="border : 3px solid blue; width: 500px; height: 500px; margin : 40px; padding : 30px">
+    <div id="box" style="background-color: red; width : 100px; height: 100px;">
+        <span>box</span>
+    </div>
+
+</div>
+
+
+</html>

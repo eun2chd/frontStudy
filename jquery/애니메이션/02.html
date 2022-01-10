@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fulldown</title>
+    <script src="jquery.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul,
+        li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: #555;
+        }
+
+        div {
+            width: 100px;
+            height: 100px;
+            border: 1px solid #000;
+
+        }
+
+        .box04 {
+            position: relative;
+            top: 0;
+            left: 0;
+        }
+    </style>
+
+    <script>
+        $(document).ready(function () {
+
+            $(".box01").delay(1000).css({ width: "100px" }).animate({ width: "1000px" }, 1000);
+            $(".box01").delay(1000).css({ width: "1000px" }).animate({ width: "100px" }, 500);
+            $(".box01").delay(100).css({ top: "0px" }).animate({ top: "500px" }, 1000);
+            $(".box01").delay(100).css({ left: "500px" }).animate({ left: "0px" }, 500);
+            $(".box01").delay(100).css({ top: "500px" }).animate({ top: "0px" }, 1000);
+
+            $(".box01").delay(1000).css({ width: "100px" }).animate({ width: "1000px" }, 500, function () {
+                $(".box01").delay(1000).css({ width: "500px" }).animate({ width: "100px" }, 700, function () {
+                    $(".box01").delay(100).css({ top: "0px" }).animate({ top: "500px" }, 1000, function () {
+                        $(".box01").delay(100).css({ left: "500px" }).animate({ left: "0px" }, 500, function () {
+                            $(".box01").delay(100).css({ top: "500px" }).animate({ top: "0px" }, 1000);
+
+
+                        });
+
+                    });
+                });
+
+
+
+            });
+
+
+        });
+
+
+    </script>
+
+</head>
+
+<body>
+    <div class="box01">box01</div>
+
+
+
+</body>
+
+</html>

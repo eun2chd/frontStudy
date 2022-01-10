@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.js"></script>
+</head>
+
+<body style="height: 5000px;">
+
+    <script>
+        // 제이쿼리 메소드로 선택
+        $(document).ready(function () {
+            // $("p").click(function () {
+            //     alert("텍스트가 선택되었습니다.");
+            // });
+
+            // $(".btn2").dblclick(function () {
+            //     alert("텍스트가 선택되었습니다.");
+            // });
+
+            // $(".btn3").hover(
+            //     function () {
+            //         $(this).css("background-color", "yellow");
+            //     }, // 마우스 호버했을때
+            //     function () {
+            //         $(this).css("background-color", "pink");
+
+
+            //     });  // 마우슬 호버했다가 나갈 때
+
+
+            // $(".btn3").mouseover(function () {
+            //     $(this).css("background-color", "yellow");
+
+
+            // });
+
+            // $(".btn3").mouseout(function () {
+            //     $(this).css("background-color", "pink");
+
+            // });
+
+            // $(".btn4").mouseenter(function () {
+
+            //     $(this).css("background-color", "yellow");
+            // });
+            // $(".btn4").mouseleave(function () {
+
+            //     $(this).css("background-color", "pink");
+
+            // });
+
+            // $(document).mousemove(function (e) { // e, event 함수의 매개변수
+            //     $("span").text(event.pageX + "," + event.pageY);
+
+
+
+            // });
+
+            // $("div").focusin(function () {
+            //     $(this).css("background-color", "#ffffcc");
+            // });
+
+            // $("div").focusout(function () {
+            //     $(this).css("background-color", "#fff");
+            // });
+
+            // $(".btn5").mouseup(function () {
+            //     $(this).after("<p style = 'color : green'>마우스UP</p>");
+
+            // });
+
+            // $(".btn5").mousedown(function () {
+
+            //     $(this).after("<p style = 'color : red'>마우스down</p>");
+
+            // });
+
+            // // 하나의 대상에 여러가지 이벤트 적용할 on() 메소드를 사용
+
+            // $(".btn6").click(function () {
+            //     $(this).css("background-color", "blue");
+
+            // });
+            // $(".btn6").mouseover(function () {
+            //     $(this).css("background-color", "red");
+
+            // });
+            $(".btn6").on({
+                click: function () {
+                    $(this).css("background-color", "blue");
+                },
+                mouseover: function () {
+                    $(this).css("background-color", "red");
+                }
+            });
+
+        });
+
+
+
+
+    </script>
+
+    <p><b>여기를 클릭하세요</b></p>
+    <p class="btn2"><b>여기를 더블클릭하세요</b></p>
+    <p class="btn3"><b>이곳에 마우스를 가져다 대 보세요</b></p>
+    <p class="btn4"><b>마우스의 포인트를 이곳에 대 보세요</b></p>
+    <br><br><br><br><br><br><br><br>
+    <p>마우스좌표 : <span></span></p>
+    <br><br><br><br><br><br><br><br>
+    <div style="border : 1px  solid blueviolet; padding : 20px">
+        이름 : <input type="text"><br>
+        주소 : <input type="text">
+    </div>
+    <br><br><br><br><br><br><br><br>
+    <p class="btn5"><b>여기를 클릭해보세요</b></p>
+    <br><br><br><br><br><br><br><br>
+
+    <p class="btn6">여기를 클릭하거나 마우스를 오버를 했을때</p>
+
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SWITCH문</title>
+</head>
+
+<body>
+
+
+
+    <script>
+        'use strict'
+        var Menu;
+        Menu = prompt("메뉴선택");
+
+        switch (Menu) {
+
+            case 'p':
+            case 'P':
+                document.write("Pizza 주문");
+                break;
+            case 's':
+            case 'S':
+                document.write("Spaghetti 주문");
+                break;
+            case 'r':
+            case 'R':
+                document.write("Risotto 주문");
+                break;
+            case 'd':
+            case 'D':
+                document.write("Drink 주문");
+                break;
+
+            default:
+                document.write("메뉴에 없음");
+                break;
+        }
+    </script>
+
+
+</body>
+
+</html>

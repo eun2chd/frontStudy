@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>flex - flex -warp</title>
+
+    <style>
+        .wrapper {
+            width: 100%;
+            height: 200px;
+            margin: 0 auto;
+            border: 3px solid red;
+            display: flex;
+            align-items: center;
+        }
+
+        .wrapper>div {
+            width: 100px;
+            border: 1px solid #000;
+            background-color: aquamarine;
+        }
+
+        /* #box1 {
+            flex-shrink: 1;
+        }
+
+        #box2 {
+            flex-shrink: 2;
+        }
+
+        #box3 {
+            flex-shrink: 3;
+        } */
+
+        #box1 {
+            flex: 1 1 0;
+        }
+
+        #box2 {
+            flex: 2 1 0;
+        }
+
+        #box3 {
+            flex: 3 1 0;
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+    <h2>flex - flex-shrink</h2>
+    <div id="container1" class="wrapper">
+        <div id="box1">
+            <h2>1</h2>
+        </div>
+        <div id="box2">
+            <h2>2</h2>
+        </div>
+        <div id="box3">
+            <h2>3</h2>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

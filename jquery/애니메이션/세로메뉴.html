@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>세로메뉴</title>
+    <script src="jquery.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul,
+        li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: #555;
+        }
+
+        .main_mn {
+            margin: 50px;
+            width: 125px;
+            border: 2px solid #555;
+        }
+
+        .main_mn>li {
+            border-bottom: 2px solid #555;
+        }
+
+        .main_mn>li>div {
+            width: 100%;
+            height: 30px;
+            background-color: aquamarine;
+            text-align: center;
+            line-height: 30px;
+            cursor: pointer;
+        }
+
+        .main_mn>li>div:hover {
+            background-color: blueviolet;
+        }
+
+        .main_mn .sub_mn {
+            border-top: 1px solid #ccc;
+        }
+
+        .main_mn .sub_mn li {
+            border-top: 1px solid #ccc;
+        }
+
+        .main_mn .sub_mn li a {
+            font-size: 15px;
+        }
+    </style>
+
+    <script>
+        $(document).ready(function () {
+            $(".sub_mn").hide();
+            $(".main_mn > li > div").click(function () {
+                $(".sub_mn").hide(); // 현재 버튼외에 서브를 숨김
+                $(".sub_mn").each(function () {
+                    if ($(this).show()) { // 조건을 보이는 서브메뉴 선택
+                        $(this).hede(); // 조건 해당되는 대상을 숨김
+                    }
+                }); // 대상 모두를 순서대로 처리문
+
+
+                // $(this).next(".sub_mn").show(); // $(this)
+                // $(this).next(".sub_mn").slideDown(); // $(this)
+                $(this).next(".sub_mn").fadeIn(); // $(this)
+
+
+            });
+
+
+        });
+
+
+    </script>
+
+</head>
+
+<body>
+
+    <ul class="main_mn">
+        <li class="mn1">
+            <div>menu</div>
+            <ul class="sub_mn">
+                <li><a href="#">s_menu</a> </li>
+                <li><a href="#">s_menu</a> </li>
+                <li><a href="#">s_menu</a> </li>
+                <li><a href="#">s_menu</a> </li>
+
+            </ul>
+        </li>
+
+        <li class="mn2">
+            <div>menu</div>
+            <ul class="sub_mn">
+                <li><a href="#">s_menu</a> </li>
+                <li><a href="#">s_menu</a> </li>
+                <li><a href="#">s_menu</a> </li>
+                <li><a href="#">s_menu</a> </li>
+
+            </ul>
+        </li>
+        </li>
+        <li class="mn3">
+            <div>menu</div>
+            <ul class="sub_mn">
+                <li><a href="#">s_menu</a> </li>
+                <li><a href="#">s_menu</a> </li>
+                <li><a href="#">s_menu</a> </li>
+                <li><a href="#">s_menu</a> </li>
+
+            </ul>
+        </li>
+        </li>
+        <li class="mn4">
+            <div>menu</div>
+            <ul class="sub_mn">
+                <li><a href="#">s_menu</a> </li>
+                <li><a href="#">s_menu</a> </li>
+                <li><a href="#">s_menu</a> </li>
+                <li><a href="#">s_menu</a> </li>
+
+            </ul>
+        </li>
+        </li>
+        <li class="mn5">
+            <div>menu</div>
+            <ul class="sub_mn">
+                <li><a href="#">s_menu</a> </li>
+                <li><a href="#">s_menu</a> </li>
+                <li><a href="#">s_menu</a> </li>
+                <li><a href="#">s_menu</a> </li>
+
+            </ul>
+        </li>
+        </li>
+
+
+
+    </ul>
+
+</body>
+
+</html>

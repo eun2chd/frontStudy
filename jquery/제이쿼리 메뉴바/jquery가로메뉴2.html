@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.js"></script>
+
+    <script>
+
+        $(document).ready(function () {
+
+            $(".sub_mn").hide();
+            //$(".main_mn > li").hover();
+            $(".main_mn > li").mousemove(function () {
+                //$(this).find(".sub_mn").show();
+                $(this).find(".sub_mn").stop().slideDown();
+            });
+            $(".main_mn > li").mouseout(function () {
+                //$(this).find(".sub_mn").hide();
+                $(this).find(".sub_mn").stop().slideUp();
+            });
+
+            $(".main_mn > li > div").hover(
+                function () {
+                    $(this).addClass("act");
+                },
+                function () {
+                    $(this).removeClass("act");
+                }
+
+            )
+
+        });
+
+    </script>
+    <style>
+        /* 기본스타일 */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul,
+        li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: #555;
+        }
+
+        /* 메뉴 레이아웃 */
+
+        .main_mn {
+            width: 390px;
+            height: 30px;
+            border: 2px solid #555;
+        }
+
+        .main_mn>li {
+            float: left;
+            width: 130px;
+            border-bottom: 2px solid #555;
+            position: relative;
+        }
+
+        .main_mn>li>div {
+            /* 기본적으로 보여지는 버튼 */
+            width: 100%;
+            height: 30px;
+            background-color: aquamarine;
+            text-align: center;
+            line-height: 30px;
+            cursor: pointer;
+        }
+
+        .sub_mn {
+            position: absolute;
+            top: 30px;
+            left: 0px;
+            width: 400px;
+            height: 30px;
+        }
+
+        .sub_mn>li {
+            float: left;
+            width: 100px;
+        }
+
+        .main_mn>li>div.act {
+            background-color: darkorange;
+            color: white;
+            transition: 0.7s;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <ul class="main_mn">
+
+        <!-- 메뉴1 -->
+
+        <li class="mn1">
+
+            <div>menu</div>
+
+            <ul class="sub_mn">
+
+                <li><a href="#">s_menu1</a></li>
+
+                <li><a href="#">s_menu1</a></li>
+
+                <li><a href="#">s_menu1</a></li>
+
+                <li><a href="#">s_menu1</a></li>
+
+            </ul>
+
+        </li>
+
+
+
+        <!-- 메뉴2 -->
+
+        <li class="mn2">
+
+            <div>menu</div>
+
+            <ul class="sub_mn">
+
+                <li><a href="#">s_menu2</a></li>
+
+                <li><a href="#">s_menu2</a></li>
+
+                <li><a href="#">s_menu2</a></li>
+
+                <li><a href="#">s_menu2</a></li>
+
+            </ul>
+
+        </li>
+
+
+
+        <!-- 메뉴3 -->
+
+        <li class="mn3">
+
+            <div>menu</div>
+
+            <ul class="sub_mn">
+
+                <li><a href="#">s_menu</a></li>
+
+                <li><a href="#">s_menu</a></li>
+
+                <li><a href="#">s_menu</a></li>
+
+                <li><a href="#">s_menu</a></li>
+
+            </ul>
+
+        </li>
+
+    </ul>
+
+
+
+
+</body>
+
+</html>

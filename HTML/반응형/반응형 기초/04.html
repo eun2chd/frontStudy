@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <me+ta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .contents {
+            margin: 0 auto;
+            width: 1840px;
+            height: 300px;
+            background-color: darkblue;
+        }
+
+       
+        @media screen and (max-width:1840px){
+            .contents {
+            margin: 0 0;
+            width: 100%;
+            height: 16.3vw; 
+            /* 100vw => 1840/100 | 300/18.4 = 16.3 */
+            background-color: darkblue;
+        }
+        .contents > .article {
+            float: left;
+            margin: 25px 1.6%;
+            width: 21.7%; 
+            /*  */
+            height: 13.5vw;
+            /* vw = 100vw / 1840 / 100 | 250 / 18.4 = 13.5 */
+            background-color: darkcyan;
+        }
+    }
+
+
+
+        @media screen and (max-width:1000px){
+            body {
+                background-color: darkgreen;
+            }
+            .contents {
+            margin: 0 auto;
+            width: 100%;
+            height: 300px;
+            background-color: darkblue;
+        }
+
+            .contents > .article {
+            float: left;
+            margin: 25px 2%;
+            width: 29%; 
+            /* 1840/100 = 18.4  400/18.4 = % */
+            height: 250px;
+            background-color: rgb(124, 184, 184);
+            
+        }
+        .contents > .article:nth-child(4) {
+        display: none;
+    }
+  }
+
+    @media screen and (max-width:480px) {
+
+        body {
+                background-color: rgb(82, 148, 209);
+            }
+
+            .contents {
+            margin: 0 auto;
+            width: 100%;
+            height: auto;
+            background-color: darkblue;
+        }
+
+        .contents > .article {
+            float: left;
+            margin: 25px 5%;
+            width: 90%; 
+            /* 1840/100 = 18.4  400/18.4 = % */
+            height: 250px;
+            background-color: rgb(124, 184, 184);
+            
+        }
+    }
+
+    @media screen and (max-width : 320px) {
+        .contents > .article:nth-child(4) {
+            display: block;
+        }    
+        
+    }
+
+  
+    
+
+
+
+    </style>
+
+
+<body>
+
+
+
+
+    <div class = "contents">
+        <div class = "article">1</div>
+        <div class = "article">2</div>
+        <div class = "article">3</div>
+        <div class = "article">4</div>
+    </div>
+
+
+</body>
+</html>

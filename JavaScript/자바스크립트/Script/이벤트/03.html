@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+</head>
+
+<body>
+
+    <button id="call">event call</button>
+    <textarea id="demo"></textarea>
+
+    <script>
+
+        if (window.addEventListener) { // 적용되면 최신 브라우저
+
+            // document.ready(function () {}); (jquery 에서 쓰던 ready 문법과 같다.)
+            window.addEventListener("load", function () {
+                var button = document.getElementById("call");
+                var note = document.getElementById("demo");
+
+                button.addEventListener("click", function () {
+
+                    note.innerHTML = "자바스크립트!!"
+                });
+
+            });
+        } else {  // 위에가 적용되지 않는다면 하위 브라우저
+
+            window.attachEvent("onload", function () {
+                var button = document.getElementById("call");
+                var note = document.getElementById("demo");
+
+                button.addEventListener("onclick", function () {
+
+                    note.innerHTML = "자바스크립트!!"
+                });
+
+            });
+        }
+
+    </script>
+</body>
+
+</html>

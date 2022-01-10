@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.js"></script>
+
+    <script>
+        // 제이쿼리 메소드로 선택
+        $(document).ready(function () {
+            // $(".sub").css({ display: "none" });
+            $(".sub").show();
+            $("#menu > ul > li").hover(
+                function () {
+                    // $(this).find(".sub").show(1000);
+                    // $(this).find(".sub").fadeIn(1000);
+                    // $(this).find(".sub").slideDown(1000);
+                    $(this).find(".sub").stop().css({ opacity: "0" }).animate({ opacity: "1" }, 1000);
+
+                },
+                function () {
+                    // $(this).find(".sub").hide();
+                    // $(this).find(".sub").fadeOut(300);
+                    // $(this).find(".sub").slideUp(300);
+                    $(this).find(".sub").stop().css({ opacity: "1" }).animate({ opacity: "0" }, 1000);
+
+                }
+            );
+
+
+
+
+        });
+
+
+
+
+    </script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            list-style: none;
+        }
+
+        #menu {
+            width: 500px;
+            height: 25px;
+            border: 1px solid #ccc;
+        }
+
+        #menu>ul {}
+
+        #menu>ul>li {
+            width: 100px;
+            text-align: center;
+            line-height: 25px;
+            float: left;
+        }
+
+        #menu ul.sub {
+            width: 100px;
+            border: 1px solid #ccc;
+        }
+
+        #menu ul.sub>li {
+            border: 1px solid #ccc;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <nav id="menu">
+        <ul>
+            <li>menu
+                <ul class="sub">
+                    <li>s_mn</li>
+                    <li>s_mn</li>
+                    <li>s_mn</li>
+                    <li>s_mn</li>
+                </ul>
+            </li>
+            <li>menu
+                <ul class="sub">
+                    <li>s_mn</li>
+                    <li>s_mn</li>
+                    <li>s_mn</li>
+                    <li>s_mn</li>
+                </ul>
+            </li>
+            <li>menu
+                <ul class="sub">
+                    <li>s_mn</li>
+                    <li>s_mn</li>
+                    <li>s_mn</li>
+                    <li>s_mn</li>
+                </ul>
+            </li>
+            <li>menu
+                <ul class="sub">
+                    <li>s_mn</li>
+                    <li>s_mn</li>
+                    <li>s_mn</li>
+                    <li>s_mn</li>
+                </ul>
+            </li>
+            <li>menu
+                <ul class="sub">
+                    <li>s_mn</li>
+                    <li>s_mn</li>
+                    <li>s_mn</li>
+                    <li>s_mn</li>
+                </ul>
+            </li>
+
+        </ul>
+
+
+    </nav>
+
+
+
+
+</body>
+
+</html>

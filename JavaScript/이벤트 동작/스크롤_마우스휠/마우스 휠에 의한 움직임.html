@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        ul,
+        li {
+            list-style: none;
+        }
+
+        .container {
+            margin: 35px;
+            height: 500px;
+        }
+
+        .ball {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: brown;
+        }
+    </style>
+
+    <script>
+        window.addEventListener('load', function () {
+            var num = 0;
+            var currentx = 0;
+            var targetx = 0;
+            var moving = false;
+            var body = document.body;
+            var ball = document.getElementById("ball");
+
+            body.addEventListener('wheel', function (e) {
+                var delta = e.wheelDeltaY;
+                if (delta > 0) {
+                    console.log("up");
+                    if (num > 0) {
+                        num -= 1;
+                    }
+                } else {
+                    console.log("down");
+                    if (num < 20) {
+                        num += 1;
+                    }
+                }
+
+                moving = true;
+                targetx = 100 * num;
+
+                var aniTimer = setInterval(function () {
+                    if (targetx > currentx) {
+
+                        if (Math.abs(targetx - currentx) > 5) {
+                            currentx += 5;
+                        }
+
+                    }
+                    else {
+                        if (Math.abs(targetx - currentx) > 5) {
+                            currentx -= 5;
+                        }
+                        else {
+                            currentx = targetx;
+                            clearInterval(aniTimer);
+                            moving = false;
+                        }
+                    }
+
+                    ball.style.marginLeft = currentx + "px";
+
+
+                }, 5);
+
+            });
+
+
+
+        }); // end of addevent
+
+
+
+    </script>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="ball" id="ball"></div>
+
+
+</body>
+
+</html>

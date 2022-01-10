@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .container {
+            margin-top: 35px;
+        }
+
+        button {
+            padding: 5px 15px;
+            background-color: #666;
+            color: #000;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+
+        }
+
+        button:hover {
+            background-color: #888;
+        }
+
+        .gallery {
+            margin-top: 60px;
+
+        }
+    </style>
+
+
+    <script>
+        window.addEventListener("load", function () {
+            // 버튼클릭으로 이미지 불러오기
+            var n = 0;
+            var btn = document.getElementById("append");
+            var gallery = document.getElementsByClassName("gallery")[0];
+
+            btn.addEventListener("click", function () {
+                var photo = document.createElement("img");
+                photo.setAttribute("src", "images/zoo" + (n + 1) + ".jpg"); // ("속성" , "속성값");
+                photo.setAttribute("alt", "zoo" + (n + 1));
+                gallery.appendChild(photo);
+                n = (n + 1) % 3 // 0,1,2
+            });
+
+
+
+
+
+        }); // end of window.addEventListener
+
+
+
+    </script>
+</head>
+
+<body>
+
+    <div class="container">
+        <button id="append" title="append">append</button>
+        <div class="gallery"></div>
+
+    </div>
+
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #f1f1f1;
+            color: #555;
+        }
+
+        .container {
+            margin-top: 40px;
+            min-width: 440px;
+        }
+
+        .controller {
+            margin-left: 50px;
+        }
+
+        .controller li {
+            display: inline-block;
+            margin-left: 8px;
+        }
+
+        .controller li:first-child {
+            margin-left: 0;
+        }
+
+        .controller li a {
+            display: block;
+            width: 20px;
+            height: 20px;
+            border-radius: 20px;
+            transition: all 0.3s;
+            background-color: #fff;
+        }
+
+        .controller li.on a {
+            width: 50px;
+            background-color: #8ac007;
+        }
+
+        .picture {
+            width: 400px;
+            height: 400px;
+            margin-top: 30px;
+            position: relative;
+            /* overflow: hidden; 수정 */
+
+        }
+
+        .picture ul {
+            /* position: absolute;
+            left: 0;
+            top: 0;
+            width: 2400px; */
+            transition: opacity 0.4s
+                /* 수정 */
+        }
+
+        .picture ul li {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 400px;
+            height: 400px;
+            opacity: 0;
+            transition: opacity 0.4s;
+            /* 수정 */
+        }
+
+        .picture ul li img {
+            width: 100%;
+            height: auto;
+        }
+
+        .picture ul li.active {
+            opacity: 1;
+        }
+    </style>
+
+
+    <script>
+        window.addEventListener('load', function () {
+            // 버튼 객체화
+            var container = document.getElementsByClassName('container')[0];
+            var controller = container.children[0];
+            var liList = controller.children;
+            var n = 0; // 0; // 현재 클릭한 대상의 인덱스값을 저장하는 변수
+
+            // 이미지 객체화
+            var picture = document.getElementsByClassName("picture")[0];
+            var pictureUL = picture.children[0];
+            var pictureLi = pictureUL.children;
+            var taggetx = 0;
+
+
+            for (var i = 0; i < liList.length; i++) { // li를 반복해서 실행하기 위한 문장
+                liList[i].index = i;
+
+                liList[i].addEventListener('click', function (e) {
+                    e.preventDefault();
+                    n = e.currentTarget.index // 현재 클릭한 대상의 인덱스 값을 추출
+
+                    // 움직이는 이미지 명령어
+
+                    for (var j = 0; j < liList.length; j++) {
+                        if (j == n) {
+                            liList[j].classList.add("on");
+                            pictureLi[j].classList.add("active");
+                        } else {
+                            liList[j].classList.remove("on");
+                            pictureLi[j].classList.remove("active");
+
+                        }
+                    }
+
+                    // 이벤트가 적용된 대상 n과 클래스 적용을 확인하기 위한 반복문 j랑 비교
+                    // 같은건 클래스를 적용하고 그렇지 않은 것은 클래스 삭제
+
+                });
+
+            }
+
+
+
+
+
+        });
+
+
+
+    </script>
+
+
+
+</head>
+
+<body>
+
+    <div class="container">
+        <ul class="controller">
+            <li class="on"><a href="#"></a></li>
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+
+        </ul>
+
+        <div class="picture">
+            <ul>
+                <li class="active"><img src="./images/work1.jpg" alt=""></li>
+                <li><img src="./images/work2.jpg" alt=""></li>
+                <li><img src="./images/work3.jpg" alt=""></li>
+                <li><img src="./images/work4.jpg" alt=""></li>
+                <li><img src="./images/work5.jpg" alt=""></li>
+                <li><img src="./images/work6.jpg" alt=""></li>
+            </ul>
+        </div>
+
+
+
+    </div>
+
+
+</body>
+
+</html>

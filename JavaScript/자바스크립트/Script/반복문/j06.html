@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+        function getHello() {
+            return 'Hello : )';
+        }
+        function getsum(num1, num2) {
+            return num1 + num2;
+        }
+        function getminus(num1, num2) {
+            return num1 - num2;
+        }
+        function getmult(num1, num2) {
+            return num1 * num2;
+        }
+        function getdiv(num1, num2) {
+            return num1 / num2;
+        }
+
+
+    </script>
+
+</head>
+
+<body>
+
+    <script>
+
+        'use strict';
+
+        const num1 = Number(prompt('첫번째 숫자 입력'));
+        const num2 = Number(prompt('두번째 숫자 입력'));
+
+        let result = getsum(num1, num2);
+        console.log(`${num1} + ${num2} = ${result}`);
+
+        let result1 = getminus(num1, num2);
+        console.log(`${num1} - ${num2} = ${result1}`);
+
+        let result2 = getmult(num1, num2);
+        console.log(`${num1} * ${num2} = ${result2}`);
+
+        let result3 = getdiv(num1, num2);
+        console.log(`${num1} / ${num2} = ${result3}`);
+
+    </script>
+</body>
+
+</html>

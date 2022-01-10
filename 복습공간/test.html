@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .container {
+            margin-top: 35px;
+
+        }
+
+        .ball {
+            position: absolute;
+            left: 40px;
+            top: 120px;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            background-color: darkcyan;
+            border-radius: 50%;
+
+        }
+
+        .effect {
+            transform: scale(2);
+        }
+
+        button {
+            padding: 5px 15px;
+            background-color: #666;
+            color: #000;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+
+        }
+
+        button:hover {
+            background-color: #888;
+        }
+    </style>
+
+
+
+    <script>
+
+        function RandNumber() {
+
+            const MAX_COUNT = 4;
+            var arr = [4];
+
+
+
+            for (let i = 0; i < MAX_COUNT; i++) {
+                const rand1 = Math.floor(Math.random() * 10);
+                arr[i] = rand1;
+                for (let j = 0; j < i; j++) {
+                    if (arr[i] == arr[j]) {
+                        i--;
+                    }
+
+                }
+
+            }
+            for (let i = 0; i < arr.length; i++) {
+                console.log(arr[i]);
+            }
+
+
+        }
+
+        RandNumber();
+
+
+
+
+
+    </script>
+
+
+</head>
+
+<body>
+
+    <div id="wrap">
+        <div>
+            <h1>숫자야구 게임</h1>
+        </div>
+
+        <div>
+            <h2>결과 : </h2>
+            <span>남은 기회</span>
+            <p>숫자는 4자리수만 입력하세요 기회는 n 번입니다. 중복된 숫자는 입력할 수 없습니다.</p>
+        </div>
+
+        <div>
+            <input type="text">
+            <button>입력</button>
+        </div>
+
+        <div>게임시작</div>
+
+
+
+
+    </div>
+
+
+
+
+</body>
+
+</html>

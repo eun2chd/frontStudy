@@ -1,0 +1,225 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+	<title>basic :: JavaScript Animation Function</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+	<link rel="stylesheet"
+		href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic">
+	<style>
+		body {
+			margin: 20px;
+			padding: 20px;
+			line-height: 1;
+			font-family: "Open Sans", sans-serif;
+			font-size: 1em;
+			background-color: #555;
+			color: #000;
+		}
+
+		button {
+			padding: 5px 15px;
+			background-color: #666;
+			color: #000;
+			border: none;
+			cursor: pointer;
+			border-radius: 5px;
+			transition: all 0.5s;
+		}
+
+		button:hover {
+			background-color: #888;
+		}
+
+		.title {
+			margin: 0;
+			padding: 0;
+			font-size: 1.5em;
+			font-weight: 300;
+		}
+
+		.container {
+			margin-top: 35px;
+		}
+
+		#photo {
+			margin-bottom: 16px;
+			width: 294px;
+			height: 324px;
+			overflow: hidden;
+		}
+	</style>
+
+	<script>
+
+		window.addEventListener('load', function () {
+
+			var photo = document.getElementById("photo");
+			var photoImg = photo.children[0];
+			var imgH = photoImg.clientHeight;
+
+			var fadeto1 = document.getElementById("fadeto1");
+			var fadeto2 = document.getElementById("fadeto2");
+			var fadein = document.getElementById("fadein");
+			var fadeout = document.getElementById("fadeout");
+			var slidedown = document.getElementById("slidedown");
+			var slideup = document.getElementById("slideup");
+			var reset = document.getElementById("reset");
+
+
+			fadeto1.addEventListener('click', function () {
+				fadeTofunction(photo, 0.5);
+			});
+
+			fadeto2.addEventListener('click', function () {
+				fadeTofunction(photo, 1);
+			});
+
+			fadein.addEventListener('click', function () {
+				fadeInFunction(photo);
+			});
+
+			fadeout.addEventListener('click', function () {
+				fadeoutFunction(photo);
+			});
+
+			reset.addEventListener('click', function () {
+				photo.removeAttribute("style");
+			});
+
+			//  추가 입력
+
+			slidedown.addEventListener("click", function () {
+				slidedownFunction(photo, imgH);
+			});
+			slideUp.addEventListener("click", function () {
+				slideUpFunction(photo, imgH);
+			});
+
+
+			function fadeInFunction(element) {
+				if (element.style.display == "" || element.style.display == "block") {
+					return;
+				}
+
+				var current = 0;
+				element.style.display = "block";
+				element.style.opacity = "current"; //0
+
+				var timer = setInterval(function () {
+					if (current < 1) {
+						current += 0.02;
+					} else {
+						current = 1;
+						clearInterval(timer);
+					}
+				}, 10);
+
+			}
+
+			function fadeoutFunction(element) {
+				if (element.style.display == "none") return;
+				var current = element.style.opacity;
+
+				if (current == "") {
+					current = 1;
+				} else {
+					current = Number(currnet);
+				}
+
+				var timer = setInterval(function () {
+					if (current > 0) {
+						current -= 0.02;
+					} else {
+						current = 0;
+						element.display = "none";
+						clearInterval(timer);
+					}
+
+					element.style.opacity = current;
+
+				}, 10);
+
+
+			}
+
+
+
+
+
+			function fadeTofunction(element, target) {
+				var current = element.style.opacity;
+				if (current == "") {
+					current = 1;
+				} else {
+					current = Number(current);
+				}
+
+				var timer = setInterval(function () {
+
+					if (current == target) {
+						clearInterval(timer);
+					}
+					if (current > target) {
+						if (Math.abs(current - target) > 0.02) {
+							current -= 0.02;
+						} else {
+							current = target;
+							clearInterval(timer);
+						}
+
+					} else {
+						if (Math.abs(current - target) > 0.02) {
+							current += 0.02;
+						} else {
+							current = target;
+							clearInterval(timer);
+						}
+
+					}
+
+					element.style.opacity = current;
+
+				}, 10);
+
+
+			}
+
+
+
+
+
+
+
+
+
+
+
+
+
+		});
+
+
+
+
+	</script>
+
+</head>
+
+<body>
+
+	<div class="container">
+		<div id="photo"><img src="images/zoo.jpg" alt="zoo"></div>
+		<button id="fadeto1">fadeTo 0.5</button>
+		<button id="fadeto2">fadeTo 1</button>
+		<button id="fadein">fadeIn</button>
+		<button id="fadeout">fadeOut</button>
+		<button id="slidedown">slideDown</button>
+		<button id="slideup">slideUp</button>
+		<button id="reset">reset</button>
+	</div>
+</body>
+
+</html>

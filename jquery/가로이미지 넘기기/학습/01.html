@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가로이미지 넘기기</title>
+    <script src="../js/jquery.js"></script>
+
+
+
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        img {
+            border: 0
+        }
+
+        ul,
+        li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+
+        #slider {
+            margin: 0 auto;
+            width: 600px;
+            height: 350px;
+            border: 3px solid #000;
+            position: relative;
+            overflow: hidden;
+
+        }
+
+        #viewer {
+            height: 350px;
+            position: relative;
+
+
+        }
+
+        #viewer>img {
+            position: absolute;
+            top: 0px;
+        }
+
+        #viewer>img:nth-child(1) {
+            left: 0;
+        }
+
+        #viewer>img:nth-child(2) {
+            left: 600px
+        }
+
+        #viewer>img:nth-child(3) {
+            left: 1200px;
+        }
+
+        #viewer>img:nth-child(4) {
+            left: 1800px;
+        }
+
+        .btns {
+            position: absolute;
+            right: 20px;
+            top: 320px;
+
+        }
+
+        .btns li {
+            float: left;
+            width: 16px;
+            height: 16px;
+            margin-right: 6px;
+            border: 1px solid #fff;
+            text-align: center;
+            line-height: 16px;
+        }
+
+        .btns li>a {
+            display: block;
+            color: #fff;
+            background-color: black;
+        }
+
+        .btns li.on a {
+            background-color: #d2b5ee;
+            color: #000;
+        }
+
+        button {
+            border: 0;
+            background-color: #000;
+            color: #ccc;
+            padding: 5px 12px;
+        }
+
+        #btn_g {
+
+            margin: 0 auto;
+            margin-top: 15px;
+            width: 600px;
+
+        }
+    </style>
+
+
+    <script>
+        $(document).ready(function () {
+            var current = 0; // 현재 보이는 인덱스 값(첫번째 사진)
+
+
+            $(".btns>li").click(function (e) {
+                e.preventDefault();
+
+                var n = $(this).index();
+                $(".btns > li").removeClass("on"); // 먼저와야함
+                $(this).addClass("on");
+                slider_ani(n);
+            });
+
+
+            //next
+            $("#next").click(function (e) {
+                e.preventDefault();
+
+                if (current < 3) {
+                    current++;
+                    $(".btns > li").removeClass("on");
+                    $(".btns > li").eq(current).addClass("on");
+                    slider_ani(current);
+                } else {
+                    current = 0;
+                    slider_ani(current);
+                }
+
+
+                // current++; // 0 1 2 3
+
+
+            });
+
+            // prev
+
+            $("#prev").click(function (e) {
+                e.preventDefault();
+                if (current > 0) {
+                    current--;
+                    slider_ani(current);
+                }
+                //current--;
+
+            });
+
+
+            // viewer 이미지 그룹의 애니메이션
+            function slider_ani(n) {
+                var pos = n * (-600) + "px";
+                current = n;
+                $(".btns > li").removeClass("on");
+                $(".btns > li").eq(current).addClass("on");
+                $("#viewer").animate({ left: pos }, 1000);
+            }
+
+
+
+        });
+
+
+
+    </script>
+
+</head>
+
+<body>
+
+    <div id="slider">
+        <div id="viewer">
+            <img src="../images/slide1.jpg" alt="">
+            <img src="../images/slide2.jpg" alt="">
+            <img src="../images/slide3.jpg" alt="">
+            <img src="../images/slide4.jpg" alt="">
+        </div>
+        <ul class="btns">
+            <li class="on"><a href="">1</a></li>
+            <li><a href="">2</a></li>
+            <li><a href="">3</a></li>
+            <li><a href="">4</a></li>
+        </ul>
+
+
+
+    </div>
+
+    <div id="btn_g">
+        <button id="prev">previous</button>
+        <button id="next">next</button>
+    </div>
+
+
+</body>
+
+</html>

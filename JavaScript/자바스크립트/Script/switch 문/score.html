@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>성적관리프로그램</title>
+</head>
+
+<body>
+
+
+
+    <script>
+
+        'use strict'
+
+        const name = prompt('이름을 입력하세요');
+        const kor = Number(prompt('국어점수를 입력하세요'));
+        const eng = Number(prompt('영어점수를 입력하세요'));
+        const math = Number(prompt('수학점수를 입력하세요'));
+
+        const total = kor + eng + math;
+        const avg = total / 3;
+        let grades = "";
+
+        if (avg >= 90) {
+            grades = "A";
+        }
+        else if (avg >= 80) {
+            grades = "B";
+        } else if (avg >= 70) {
+            grades = "C";
+        } else if (avg >= 60) {
+            grades = "D";
+        } else {
+            grades = "F";
+        }
+
+
+
+        // ${name} 객체형
+        document.write(`<h2>${name}님의 성적표</h2>`);
+        document.write(`<p>국어점수 : ${kor}</p>`);
+        document.write(`<p>수학점수 : ${math}</p>`);
+        document.write(`<p>영어점수 : ${eng}</p>`);
+        document.write(`<p>총점 : ${total}</p>`);
+        document.write(`<p>평균 : ${avg}</p>`);
+        document.write(`<p>학점 : ${grades}</p>`);
+
+
+    </script>
+
+
+</body>
+
+</html>

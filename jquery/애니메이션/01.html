@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fulldown</title>
+    <script src="jquery.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul,
+        li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: #555;
+        }
+
+        div {
+            width: 100px;
+            height: 100px;
+            border: 1px solid #000;
+
+        }
+
+        .box04 {
+            position: relative;
+            top: 0;
+            left: 0;
+        }
+    </style>
+
+    <script>
+        $(document).ready(function () {
+            // css() 제이쿼리로 스타일 적용하는 메소드;
+            // css("background-color","red"), css( { background-color : "red", width : "100px";})
+
+            // animate( {css선언}, 1000) 1000 = 1초
+            // .css() 부분이 aniamte()에 적용할때 애니메이션의 시작값을 설정
+            // .stop() 현재 요소 애니메이션 작동전에 애니메이션들을 중지
+            // .delay() 애니메이션의 대기 시간
+
+            $(".box01").delay(50).css({ width: "100px" }).animate({ width: "1000px" }, 1000);
+            $(".box02").delay(100).css("background-color", "blue").animate({ "background-color": "red" }, 1000);
+            $(".box03").delay(200).css({ fontSize: "15px" }).animate({ fontSize: "50px" }, 2000);
+            $(".box04").delay(300).css({ left: "0" }).animate({ left: "1000px" }, 1000);
+            $(".box05").delay(1000).css({ opacity: 0 }).animate({ opacity: 1 }, 500);
+
+        });
+
+
+    </script>
+
+</head>
+
+<body>
+    <div class="box01">box01</div>
+    <div class="box02">box02</div>
+    <div class="box03">box03</div>
+    <div class="box04">box04</div>
+    <div class="box05">box05</div>
+
+
+
+</body>
+
+</html>

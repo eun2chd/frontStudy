@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>대상을 부모 마지막 앞에 이동</title>
+    <script src="jquery.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            var el = $(".list");
+            // prependTo() 어떤대상을 el라는 부모아래에 자식들 앞 부분을 이동
+            $(".li01").prependTo(el);
+
+
+            // appendTo() 어떤대상을 el라는 부모아래에 자식들 마지막 부분을 이동
+            $(".li04").appendTo(el);
+
+            var cloneEl = $(".list > li").clone();
+            console.log(cloneEl);
+
+            $(".copy").append(cloneEl);
+            console.log(cloneEl);
+
+
+        });
+
+
+
+    </script>
+
+
+
+</head>
+
+<body>
+
+</body>
+
+
+<ul class="list">
+    <!-- 3-0 추가 -->
+    <li>3-1</li>
+    <li>3-2</li>
+    <li>3-3</li>
+    <li>3-4 (아래에 3-5를 채워주세요.)</li>
+    <!-- 3-5 추가 -->
+
+
+</ul>
+
+<li class="li01">4-1</li>
+<li class="li04">4-1</li>
+
+<ul class="copy" class="list" style="border : 1px solid #000;">
+    <!-- .list의 li태그를 볷사해서 이곳으로 붙임 -->
+</ul>
+
+
+<input type="button" value="태그삭제">
+
+
+
+
+</html>

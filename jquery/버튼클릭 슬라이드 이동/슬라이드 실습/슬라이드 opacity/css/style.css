@@ -1,0 +1,96 @@
+* {     margin: 0;padding:0; }
+ul,li {list-style: none;}
+a{text-decoration: none;}
+#wrap {
+    width: 100%;
+    height: 450px;
+    position: relative; 
+    /* 버튼을 기준으로 부모 */
+ 
+}
+#view {
+    width: 100%;
+    height: 450px;
+    position: relative;
+    /* 지나가는 이미지를 기준으로 부모 */
+    overflow: hidden;
+     
+    
+}
+#view ul {
+
+}
+#view ul li {
+    width: 100%;
+    height: 450px;
+    position: absolute;
+    top : 0;
+    font-size: 300px;
+    color : #fff;
+}
+#view ul li:nth-child(1) {
+    left : 0%;
+    background-color: blueviolet;
+    z-index: 400;
+}
+#view ul li:nth-child(2) {
+    left : 0%;
+    background-color: rgb(49, 104, 92);
+     z-index: 300;
+}
+#view ul li:nth-child(3) {
+    left : 0%;
+    background-color: rgb(149, 127, 170);
+    z-index: 200;
+}
+#view ul li:nth-child(4) {
+    left : 0%;
+    background-color: rgb(102, 161, 34);
+     z-index: 100;
+}
+
+#btns {
+    position: absolute;
+    left : 50%;
+    bottom: 50px;
+    z-index: 1000;
+    margin-left: -45px;
+}
+#btns li{
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: azure;
+    text-align: center;
+    line-height: 15px;
+    margin-right: 10px;
+    float: left;
+    cursor: pointer;
+}
+#btns li:hover {
+    background-color: rgb(228, 83, 17);
+}
+#btns li.on {
+    background-color: burlywood;
+}
+
+.l_mn {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    border : 1px solid #000;
+    top : 200px; 
+    left : 100px;
+    z-index: 9999;
+}
+
+.r_mn {
+
+    width: 60px;
+    height: 60px;
+    border : 1px solid #000;
+    position: absolute;
+    top : 200px ;
+    right : 100px;
+      z-index: 9999;
+} 
