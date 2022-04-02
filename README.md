@@ -1,4 +1,4 @@
-# Front-end #
+# Front-end 학습목표 #
 # HTML #
 - HTML 문법 학습
 - HTML 시멘틱 구조
